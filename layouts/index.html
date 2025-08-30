@@ -15,12 +15,20 @@
     <div class="row">
         <!-- Notes Section (Left) -->
         <div class="col-lg-4">
-            {{ partial "home_garden.html" . }}
+            <div class="row g-5">
+                <div class="col-12">
+                    {{ partial "home_garden.html" . }}
+                </div>
+            </div>
         </div>
         
         <!-- Writing Section (Right) -->
         <div class="col-lg-8">
-            {{ partial "home_writing.html" . }}
+            <div class="row g-5">
+                <div class="col-12">
+                    {{ partial "home_writing.html" . }}
+                </div>
+            </div>
         </div>
     </div>
 </div>
