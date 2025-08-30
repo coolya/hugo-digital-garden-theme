@@ -1,0 +1,9 @@
+.row.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row.d-flex > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
