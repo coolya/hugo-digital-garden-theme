@@ -1,0 +1,62 @@
+{{ .Scratch.Set "writing_tags_list" ""}}
+{{ range .Params.writing_tags }}
+    {{ $.Scratch.Add "writing_tags_list" ( . | printf " js-iso-%s") }}
+{{ end }}
+
+<div class='col {{ $.Scratch.Get "writing_tags_list" }}'>
+    <div class="card h-100">
+        
+        <!-- Featured Image (if exists) -->
+        {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+        {{ with $img }}
+        {{ $img = $img.Fit "400x200" }}
+        <img src="{{ .Permalink }}" alt="{{ $.Title }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+        {{ end }}
+        
+        <div class="card-body d-flex flex-column">
+            
+            <!-- Title -->
+            <h5 class="card-title name">
+                <a href="{{ .Permalink }}" class="text-decoration-none text-dark">
+                    {{ .Title }}
+                </a>
+            </h5>
+            
+            <!-- Dates -->
+            <div class="mb-2">
+                <small class="text-muted">
+                    {{ .Date.Format "Jan 2, 2006" }}
+                    {{ if ne .Date .Lastmod }}
+                    • Updated {{ .Lastmod.Format "Jan 2, 2006" }}
+                    {{ end }}
+                </small>
+            </div>
+            
+            <!-- Status -->
+            {{ partial "status.html" . }}
+            
+            <!-- Summary/Preview -->
+            <div class="card-text serif flex-grow-1 mb-3">
+                {{ if .Summary }}
+                    {{ .Summary }}
+                {{ else }}
+                    {{ .Content | truncate 150 }}
+                {{ end }}
+            </div>
+            
+            <!-- Tags -->
+            {{ with .Params.writing_tags }}
+            <div class="mb-3">
+                {{ range . }}
+                <span class="badge bg-light text-dark me-1" style="font-size: 0.7rem;">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+            
+            <!-- Read More -->
+            <div class="mt-auto">
+                <a href="{{ .Permalink }}" class="btn btn-outline-primary btn-sm">Read Essay</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -35,27 +35,32 @@ copyright = "Nigalya Ponya ©"
 
 [menu]
   [[menu.main]]
+    name = "Writing"
+    url = "/writing/"
+    weight = 1
+  [[menu.main]]
     name = "Notes"
     url = "/notes/"
-    weight = 1
+    weight = 2
   [[menu.main]]
     name = "Projects"
     url = "/projects/"
-    weight = 2
+    weight = 3
   [[menu.main]]
     name = "Library"
     url = "/library/"
-    weight = 3
+    weight = 4
   [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 4
+    weight = 5
 
 
 [taxonomies]
   notes_tags = 'notes_tags'
   project_tags = 'project_tags'
   library_tags = 'library_tags'
+  writing_tags = 'writing_tags'
 
 
 [markup]
