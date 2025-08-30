@@ -12,6 +12,11 @@ copyright = "Nigalya Ponya ©"
   initials = "NP"
   googleAnalytics = ""
 
+  [params.plausible]
+    enable = false
+    domain = ""
+    scriptURL = "https://plausible.io/js/script.js"
+
   [[params.social]]
     name = "Twitter"
     link = "#"
