@@ -35,8 +35,8 @@ copyright = "Nigalya Ponya ©"
 
 [menu]
   [[menu.main]]
-    name = "Digital Garden"
-    url = "/garden/"
+    name = "Notes"
+    url = "/notes/"
     weight = 1
   [[menu.main]]
     name = "Projects"
@@ -53,7 +53,7 @@ copyright = "Nigalya Ponya ©"
 
 
 [taxonomies]
-  garden_tags = 'garden_tags'
+  notes_tags = 'notes_tags'
   project_tags = 'project_tags'
   library_tags = 'library_tags'
 
