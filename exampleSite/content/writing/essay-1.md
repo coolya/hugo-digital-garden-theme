@@ -3,8 +3,7 @@ title: "The Future of Digital Gardens"
 date: 2024-01-15
 lastMod: 2024-01-20
 draft: false
-writing_tags: ["technology", "web", "knowledge"]
-summary: "Exploring how digital gardens are reshaping how we think about knowledge sharing and personal learning in the digital age."
+tags: ["technology", "web", "knowledge"]
 status: "growing"
 ---
 

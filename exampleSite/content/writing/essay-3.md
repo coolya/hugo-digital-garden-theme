@@ -3,8 +3,7 @@ title: "Learning in Public"
 date: 2024-01-28
 lastMod: 2024-01-30
 draft: false
-writing_tags: ["learning", "community", "growth"]
-summary: "Why sharing our learning journey openly can accelerate growth and build meaningful connections."
+tags: ["learning", "community", "growth"]
 status: "evergreen"
 ---
 

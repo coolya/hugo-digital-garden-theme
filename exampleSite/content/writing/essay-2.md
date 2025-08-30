@@ -3,8 +3,7 @@ title: "On Creative Practice"
 date: 2024-02-01
 lastMod: 2024-02-01
 draft: false
-writing_tags: ["creativity", "productivity", "reflection"]
-summary: "Reflections on building and maintaining a sustainable creative practice in an age of constant distraction."
+tags: ["creativity", "productivity", "reflection"]
 status: "seeding"
 ---
 
