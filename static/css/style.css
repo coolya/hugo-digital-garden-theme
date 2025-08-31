@@ -28,6 +28,10 @@ body {
   min-height: 95vh;
 }
 
+img {
+    width: 100%;
+}
+
 a {
   text-decoration: underline var(--grey);
   color: var(--dark);
