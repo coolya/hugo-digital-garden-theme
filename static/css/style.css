@@ -82,7 +82,7 @@ table td{
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
-.top-highlight:hover { 
+.top-highlight:hover {
   border-top-color: var(--blue);
   border-top-width: 2px;
 }
@@ -102,7 +102,7 @@ table td{
   .card{
     margin: 20px;
   }
-} 
+}
 
 blockquote {
   font-family: var(--summary);
@@ -136,6 +136,7 @@ code {
   font-weight: lighter;
   color: green;
   font-size: small;
+  white-space: nowrap;
 }
 
 
@@ -250,10 +251,10 @@ code {
   background-color: var(--lighter-blue);
   color:var(--dark);
 }
-.btn-check:active+.button, 
-.btn-check:checked+.button, 
-.button.active, 
-.button.dropdown-toggle.show, 
+.btn-check:active+.button,
+.btn-check:checked+.button,
+.button.active,
+.button.dropdown-toggle.show,
 .button:active {
   color: #fff;
   background-color: var(--lighter-blue);
