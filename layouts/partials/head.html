@@ -24,7 +24,47 @@
     <!-- Site Title -->
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    {{ $description := "" }}
+    {{ if .IsPage }}
+    {{ $description = .Summary }}
+    {{ else if .IsHome }}
+    {{ $description = .Site.Params.description }}
+    {{ end }}
+    {{ $url := .Permalink }}
+    {{ if not $url }}{{ $url = .Site.BaseURL }}{{ end }}
+    {{ $image := "" }}
+    {{ if .Params.images }}
+    {{ $image = index .Params.images 0 }}
+    {{ else if .Params.image }}
+    {{ $image = .Params.image }}
+    {{ else if .Params.featuredImage }}
+    {{ $image = .Params.featuredImage }}
+    {{ else if (.Resources.GetMatch "featured.*") }}
+    {{ $image = (.Resources.GetMatch "featured.*").Permalink }}
+    {{ else if .Site.Params.socialImage }}
+    {{ $image = .Site.Params.socialImage }}
+    {{ else }}
+    {{ $image = (print .Site.BaseURL "images/social-share.png") }}
+    {{ end }}
+    {{/* Ensure $image is an absolute URL if provided as relative */}}
+    {{ if $image }}
+    {{ if not (or (hasPrefix $image "http://") (hasPrefix $image "https://") (hasPrefix $image "//")) }}
+    {{ $clean := replace $image "./" "" }}
+    {{ $image = absURL $clean }}
+    {{ end }}
+    {{ end }}
     <title>{{ $title }}</title>
     {{ partial "plausible.html" . }}
-    <meta name="description" content="{{ if .IsPage }}{{ .Summary }}{{ else }}{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ end }}{{ end }}">
+    <meta name="description" content="{{ $description }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ $url }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    {{ if $image }}<meta property="og:image" content="{{ $image }}">{{ end }}
+    <meta name="twitter:card" content="{{ if $image }}summary_large_image{{ else }}summary{{ end }}">
+    {{ with .Site.Params.twitter }}<meta name="twitter:site" content="{{ . }}">{{ end }}
+    <meta name="twitter:title" content="{{ $title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    {{ if $image }}<meta name="twitter:image" content="{{ $image }}">{{ end }}
 </head>
