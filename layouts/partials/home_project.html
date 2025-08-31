@@ -9,7 +9,7 @@
     </div>
     <div class="col me-auto">
         <div class="row row-cols-1 row-cols-md-3 g-4 mb-5" data-masonry='{"percentPosition": true }'>
-            {{ range ( where site.RegularPages "Section" "projects" | sort "Date" "desc" | first 3 ) }}
+            {{ range ( where site.RegularPages.ByDate.Reverse "Section" "projects" |  first 3 ) }}
             {{ partial "card_project.html" . }}
             {{ end }}
         </div>

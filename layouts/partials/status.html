@@ -5,6 +5,10 @@
     <span class="status">Growing 🌿</span>
     {{ else if eq "evergreen" . }}
     <span class="status">Evergreen 🌳</span>
+	{{ else if eq "dormant" . }}
+    <span class="status">Dormant ❄</span>
+	{{ else if eq "compost" . }}
+    <span class="status">Composting 🍂</span>
     {{ else }}
     {{ end }}
 {{ end }}
