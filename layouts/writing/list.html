@@ -10,20 +10,6 @@
     </div>
 </div>
 
-<!-- Filter Buttons -->
-<!-- <div class="container mb-5">
-    <div class="btn-toolbar mb-2 bio" role="toolbar" aria-label="Toolbar with button groups">
-        <i class="fas fa-filter"></i>
-        <div id="filters" class="button-group">
-            {{ range $name, $taxonomy := .Site.Taxonomies.writing_tags }}
-            {{ $btnid := $name | printf ".js-iso-%s"}}
-            <input type="checkbox" class="btn-check" id="{{ $btnid }}" autocomplete="off" data-filter="{{ $btnid }}">
-            <label class="button" for="{{ $btnid }}">{{ $name }}</label>  
-            {{ end }}
-        </div>
-    </div>
-</div> -->
-
 <!-- Writing Cards -->
 <div class="container">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="blogposts">
