@@ -6,11 +6,18 @@
 <div class='col {{ $.Scratch.Get "writing_tags_list" }}'>
 	<div class="card h-100">
 
-		<!-- Featured Image (if exists) -->
+		<!-- Featured Image: prefer frontmatter .Params.image, fallback to resource named 'featured' -->
 		{{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+		{{ with .Params.image }}
+		{{ if not $img }}{{ $img = $.Resources.GetMatch . }}{{ end }}
+		{{ end }}
 		{{ with $img }}
 		{{ $img = $img.Fit "400x200" }}
 		<img src="{{ .Permalink }}" alt="{{ $.Title }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+		{{ else }}
+		{{ with .Params.image }}
+		<img src="{{ . }}" alt="{{ $.Title }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+		{{ end }}
 		{{ end }}
 
 		<div class="card-body d-flex flex-column">
