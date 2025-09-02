@@ -15,7 +15,7 @@
     <div class="row g-5">
         <!-- Headers -->
         <div class="col-lg-4">
-            <div>
+            <div class="h-20">
                 {{ with .Site.GetPage "section" "notes" }}
                 <div class="pb-4">
                     <a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
@@ -26,7 +26,7 @@
             {{ partial "home_garden.html" . }}
         </div>
         <div class="col-lg-8">
-            <div>
+            <div class="h-20">
                 {{ with .Site.GetPage "section" "writing" }}
                 <div class="pb-4">
                     <a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
