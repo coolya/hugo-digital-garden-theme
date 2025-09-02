@@ -15,30 +15,25 @@
     <div class="row g-5">
         <!-- Headers -->
         <div class="col-lg-4">
-            {{ with .Site.GetPage "section" "notes" }}
-            <div class="pb-4">
-                <a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </div>      
-            {{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
-            {{ end }}
-        </div>
-        <div class="col-lg-8">
-            {{ with .Site.GetPage "section" "writing" }}
-            <div class="pb-4">
-                <a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <div>
+                {{ with .Site.GetPage "section" "notes" }}
+                <div class="pb-4">
+                    <a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </div>
+                {{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
+                {{ end }}
             </div>
-            {{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
-            {{ end }}
-        </div>
-    </div>
-    <div class="row g-5">
-        <!-- Notes Section (Left) -->
-        <div class="col-lg-4">
             {{ partial "home_garden.html" . }}
         </div>
-        
-        <!-- Writing Section (Right) -->
         <div class="col-lg-8">
+            <div>
+                {{ with .Site.GetPage "section" "writing" }}
+                <div class="pb-4">
+                    <a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </div>
+                {{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
+                {{ end }}
+            </div>
             {{ partial "home_writing.html" . }}
         </div>
     </div>
